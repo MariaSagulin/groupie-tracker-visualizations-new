@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*box-sizing: border-box;*/
+}
+
+body{
+    margin: 0;
+    background-color: gainsboro;
+}
+
+/*NavBar design*/
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  border-bottom: 10px solid rgba(61, 222, 233, 0.9);
+  position: fixed;
+  height:70px;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 34px;
+  width: auto;
+}
+  
+ /*BodyDiv design*/
+.bandsParent{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    position: relative;
+    width: 76%;
+    height: auto;
+    text-align: -webkit-center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+#errText{
+    padding-top: 50px;
+    font-size: 34px;
+}
+
+.errMGS{
+    color:red;
+    font-size: 50px;
+}
+
+.bandsParent a{
+  top: 500px;
+    height: 50px;
+    width: 300px;
+    padding-bottom: 20px; padding-top: 15px; padding-left: 20px; padding-right: 20px;
+    font-size: 50px;
+    background-color: #333;
+    border: 5px solid #333;
+    border-width: 5px;
+    border-radius: 25px;
+    color:white;
+    text-decoration: none;
+}
+
+.Home:hover {
+    background: #ddd;
+    text-shadow: 1px 1px 10px black,
+              -1px 1px 10px black,
+              1px -1px 10px black,
+              -1px -1px 10px black;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+/*this is for moving background*/
+
+/* Animated background */
+/* Animated background credit / source: Mohammad Abdul Mohaiman */
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  
+  @keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+  }
+  
+  .background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 60px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: rgba(61, 221, 233, 0.658);
+    overflow: hidden;
+  }
+  .background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 19s linear infinite;
+  }
+  
+  .background li:nth-child(0) {
+    left: 37%;
+    width: 188px;
+    height: 188px;
+    bottom: -188px;
+    animation-delay: 1s;
+  }
+  .background li:nth-child(1) {
+    left: 7%;
+    width: 184px;
+    height: 184px;
+    bottom: -184px;
+    animation-delay: 5s;
+  }
+  .background li:nth-child(2) {
+    left: 14%;
+    width: 100px;
+    height: 100px;
+    bottom: -100px;
+    animation-delay: 1s;
+  }
+  .background li:nth-child(3) {
+    left: 67%;
+    width: 123px;
+    height: 123px;
+    bottom: -123px;
+    animation-delay: 1s;
+  }
+  .background li:nth-child(4) {
+    left: 13%;
+    width: 142px;
+    height: 142px;
+    bottom: -142px;
+    animation-delay: 7s;
+  }
+  .background li:nth-child(5) {
+    left: 48%;
+    width: 143px;
+    height: 143px;
+    bottom: -143px;
+    animation-delay: 14s;
+  }
+  .background li:nth-child(6) {
+    left: 63%;
+    width: 168px;
+    height: 168px;
+    bottom: -168px;
+    animation-delay: 8s;
+  }
+  .background li:nth-child(7) {
+    left: 22%;
+    width: 185px;
+    height: 185px;
+    bottom: -185px;
+    animation-delay: 1s;
+  }
+  .background li:nth-child(8) {
+    left: 66%;
+    width: 129px;
+    height: 129px;
+    bottom: -129px;
+    animation-delay: 2s;
+  }
+  .background li:nth-child(9) {
+      left: 61%;
+      width: 123px;
+      height: 123px;
+      bottom: -123px;
+      animation-delay: 11s;
+  }
+  
+  
