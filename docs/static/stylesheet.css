@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*box-sizing: border-box;*/
+}
+body{
+  margin: 0;
+}
+
+/*NavBar design*/
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  border-bottom: 10px solid rgba(61, 222, 233, 0.9);
+  position: fixed;
+  height:70px;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 34px;
+  width: auto;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  text-shadow: 1px 1px 10px black,
+              -1px 1px 10px black,
+              1px -1px 10px black,
+              -1px -1px 10px black;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+/*BodyDiv design*/
+.bandsParent{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10vw;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+  height: auto;
+  color: white;
+}
+
+/* Bands div design*/
+.bandsChild{
+  position: relative;
+  color: white;
+  float: left;
+  height: 350px;
+  width: 250px;
+  background-color: #333;
+  font-size: 30px;
+  text-align: center;
+  border: 5px solid #333;
+  box-shadow: 5px 10px rgba(67, 71, 72, 0.658);
+}
+
+.bandsChild img{
+  border-bottom: 5px solid #333;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.button{
+  height: 100px;
+  color: #ddd;
+  margin-top: -10px;
+  justify-items: center;
+  vertical-align: middle;
+}
+
+#bandText{
+  margin: auto;
+  height: 100px;
+  vertical-align: middle;
+}
+
+/* for img hover if needed*/
+.bandsChild:hover, p.name:hover{
+  background: #ddd;
+  color: black;
+  text-shadow: 1px 1px 10px black,
+              -1px 1px 10px black,
+              1px -1px 10px black,
+              -1px -1px 10px black;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+/*Bands PopUp Design*/
+.overlay_artist {
+  padding-top: 90px;
+  position: fixed;
+  color: black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay_artist:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup_artist {
+  margin-top: 25vh;
+  margin: auto;
+  color: black;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  height: auto;
+  max-height: 35vh;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+@media (max-width: 600px) {
+  .popup_artist {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 601px) {
+  .popup_artist {
+    width: 480px;
+  }
+}
+
+#bandHeaderText{
+  font-size: 28px;
+  height: 80px;
+}
+
+.bandSubHeaderText{
+  padding-bottom: 10px;
+}
+
+#concertDates{
+  color: #333;
+  text-indent: 20px;
+}
+
+.popup_artist .close_popup_artist {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 60px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.close_popup_artist:hover{
+  color:  rgba(61, 221, 233, 0.658);
+}
+
+.popup_artist .content_popup_artist {
+  max-height: 80%;
+  overflow: auto;
+}
+/*
+summary {
+  list-style: none;
+}
+*/
+summary:hover {
+  text-shadow: 2px 2px 5px rgba(61, 221, 233, 0.658);
+  cursor: pointer;
+}
+
+/* Animated background */
+/* Animated background credit / source: Mohammad Abdul Mohaiman */
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+@keyframes animate {
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 60px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: rgba(61, 221, 233, 0.658);
+  overflow: hidden;
+}
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 19s linear infinite;
+}
+
+.background li:nth-child(0) {
+  left: 37%;
+  width: 188px;
+  height: 188px;
+  bottom: -188px;
+  animation-delay: 1s;
+}
+.background li:nth-child(1) {
+  left: 7%;
+  width: 184px;
+  height: 184px;
+  bottom: -184px;
+  animation-delay: 5s;
+}
+.background li:nth-child(2) {
+  left: 14%;
+  width: 100px;
+  height: 100px;
+  bottom: -100px;
+  animation-delay: 1s;
+}
+.background li:nth-child(3) {
+  left: 67%;
+  width: 123px;
+  height: 123px;
+  bottom: -123px;
+  animation-delay: 1s;
+}
+.background li:nth-child(4) {
+  left: 13%;
+  width: 142px;
+  height: 142px;
+  bottom: -142px;
+  animation-delay: 7s;
+}
+.background li:nth-child(5) {
+  left: 48%;
+  width: 143px;
+  height: 143px;
+  bottom: -143px;
+  animation-delay: 14s;
+}
+.background li:nth-child(6) {
+  left: 63%;
+  width: 168px;
+  height: 168px;
+  bottom: -168px;
+  animation-delay: 8s;
+}
+.background li:nth-child(7) {
+  left: 22%;
+  width: 185px;
+  height: 185px;
+  bottom: -185px;
+  animation-delay: 1s;
+}
+.background li:nth-child(8) {
+  left: 66%;
+  width: 129px;
+  height: 129px;
+  bottom: -129px;
+  animation-delay: 2s;
+}
+.background li:nth-child(9) {
+    left: 61%;
+    width: 123px;
+    height: 123px;
+    bottom: -123px;
+    animation-delay: 11s;
+}

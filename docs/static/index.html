@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/static/stylesheet.css" rel="stylesheet">
+    <!-- <script> src ="/docs/scripts/range.js"</script> -->
+    <title>Groupie Tracker</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/"class="logo">Groupie Tracker</a>
+     </div>
+        <!-- Animated box background -->
+        <ul class="background">
+            <!--10 List items as detailed in stylesheet.css-->
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!-- Background Credit: Mohammad Abdul Mohaiman -->
+    <div class="bandsParent">
+        {{range .}}
+        <div class="bandsChild" >
+            <a id="bandIcon" class="button" href="#groupie_tracker_artist{{.Id}}" style="text-decoration: none;">
+            <img src="{{.Image}}" alt="">
+            <p id="bandText">{{.Name}}</p> 
+            </a>
+        </div>
+        {{end}}
+    </div>
+    <!--this is for popup -->
+    {{range .}}
+    <div id="groupie_tracker_artist{{.Id}}" class="overlay_artist">
+        <div class="popup_artist">
+            <h2 id="bandHeaderText">{{.Name}}</h2>
+            <a class="close_popup_artist" href="##">&times;</a>
+            <div class="content_popup_artist">
+                <p class="bandSubHeaderText"><strong>Members:</strong></p>
+                <ul>{{range .Members}}<li>{{.}}</li>{{end}}
+                </ul>
+                <br>
+                <p class="bandSubHeaderText"><strong>Creation date:</strong> {{.CreationDate}}</p>
+                <p class="bandSubHeaderText"><strong>First album released on:</strong> {{.CFirstAlbum}}</p>
+                <p class="bandSubHeaderText"><strong>Concert Locations (with dates):</strong></p>
+                <ul>{{range $key, $value := .Concerts}}
+                    <li>
+                        <details>
+                            <summary>{{$key}}</summary>
+                            <ul id="concertDates">
+                                {{range $value}}
+                                <li>
+                                    {{.}}
+                                </li>   
+                            {{end}}
+                            </ul>
+                        </details>
+                        {{end}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{{end}}
+</body>
+</html>

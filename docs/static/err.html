@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/static/errstylesheet.css" rel="stylesheet">
+    <title>Groupie Tracker</title>
+</head>
+<body>
+    <!--    Nav Bar     -->
+    <div class="navbar">
+        <a>Groupie Tracker</a>
+    </div>
+    <!--    Nav Bar     -->
+    <ul class="background">
+        <!--10 List items as detailed in stylesheet.css-->
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+        <!--this is for moving box background-->
+         <!-- background Credit: Mohammad Abdul Mohaiman -->
+    <div class="bandsParent">
+        <p id="errText"><strong>Your Request has encountered the following error:</strong>
+            <br>
+            <br>
+            <strong class="errMGS">{{.StatusCode}}</strong>
+            <br>
+            <strong class="errMGS">{{.StatusMsg}}</strong>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="/" class="Home">Home</a>
+    </div>
+</body>
+</html>
